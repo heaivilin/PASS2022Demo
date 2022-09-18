@@ -1,0 +1,4 @@
+Northwinds/Northwinds/bin/*
+Northwinds/Northwinds/obj/*
+Northwinds/Northwinds/Import Schema Logs/*
+*.sqlproj.user
