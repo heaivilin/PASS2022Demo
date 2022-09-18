@@ -124,6 +124,8 @@
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="PublishProfiles" />
+    <Folder Include="Security" />
+    <Folder Include="Security\Schema" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\CustomerCustomerDemo.sql">
@@ -270,6 +272,7 @@
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
+    <Build Include="Security\Schema\SSDT.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishProfiles\DEV.publish.xml" />
