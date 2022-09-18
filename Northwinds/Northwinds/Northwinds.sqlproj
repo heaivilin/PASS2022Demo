@@ -127,6 +127,8 @@
     <Folder Include="PublishProfiles" />
     <Folder Include="Security" />
     <Folder Include="Security\Schema" />
+    <Folder Include="SSDT" />
+    <Folder Include="SSDT\Table" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\CustomerCustomerDemo.sql">
@@ -274,6 +276,7 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\Schema\SSDT.sql" />
+    <Build Include="SSDT\Table\Tenagra.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishProfiles\DEV.publish.xml" />
