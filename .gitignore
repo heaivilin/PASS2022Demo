@@ -3,3 +3,4 @@ Northwinds/Northwinds/obj/*
 Northwinds/Northwinds/Import Schema Logs/*
 *.sqlproj.user
 Northwinds/Northwinds/Northwinds.jfm
+Northwinds/Northwinds/Northwinds.dbmdl
