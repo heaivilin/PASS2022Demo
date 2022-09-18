@@ -24,6 +24,9 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
+      
+    - name: Add SQLPackage.exe
+      uses: coreywebber/setup-sqlpackage@v1
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -37,12 +40,6 @@ jobs:
       
     - name: deploy
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: sqlpackage /target:"${{env.SOLUTION_FILE_PATH}}\bin\debug\Northwinds.dacpac" /action:Publish /profile:"${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml"
+      run: sqlpackage /sourcefile:"${{env.SOLUTION_FILE_PATH}}\bin\debug\Northwinds.dacpac" /action:Publish /profile:"${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml"
 
-    - name: run-sqlpackage
-      uses: Azure/run-sqlpackage-action@v1.0.0
-      with:
-        action: 'Publish'
-        sourcepath: ${{env.SOLUTION_FILE_PATH}}\bin\debug\
-        profile: ${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml
-        
+  
