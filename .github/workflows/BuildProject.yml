@@ -39,6 +39,6 @@ jobs:
       uses: Azure/run-sqlpackage-action@v1.0.0
       with:
         action: 'Publish'
-        sourcepath: build
-        profile: ${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.com
+        sourcepath: ${{env.SOLUTION_FILE_PATH}}\bin\debug\
+        profile: ${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml
         
