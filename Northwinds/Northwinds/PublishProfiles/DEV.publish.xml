@@ -12,5 +12,9 @@
     <IgnoreColumnOrder>True</IgnoreColumnOrder>
     <DropObjectsNotInSource>True</DropObjectsNotInSource>
     <ProfileVersionNumber>1</ProfileVersionNumber>
+    <DoNotDropDatabaseRoles>True</DoNotDropDatabaseRoles>
+    <DoNotDropPermissions>True</DoNotDropPermissions>
+    <DoNotDropUsers>True</DoNotDropUsers>
+    <DoNotDropLogins>True</DoNotDropLogins>
   </PropertyGroup>
 </Project>
