@@ -16,5 +16,6 @@
     <DoNotDropPermissions>True</DoNotDropPermissions>
     <DoNotDropUsers>True</DoNotDropUsers>
     <DoNotDropLogins>True</DoNotDropLogins>
+    <DoNotDropRoleMembership>True</DoNotDropRoleMembership>
   </PropertyGroup>
 </Project>
