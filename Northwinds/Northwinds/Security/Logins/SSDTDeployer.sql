@@ -1,0 +1,1 @@
+﻿CREATE LOGIN [SSDTDeployer] WITH PASSWORD = ''
