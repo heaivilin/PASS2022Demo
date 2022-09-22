@@ -41,5 +41,5 @@ jobs:
     
     - name: get sqlpackage version
       working-directory: C:\Program Files\Microsoft SQL Server\160\DAC\bin\
-      run: ./sqlpackage.exe /version
+      run: ./sqlpackage.exe /action:publish /profile:".\PASS2022Demo\PASS2022Demo\Northwinds\Northwinds\PublishProfiles\dev.publish.xml"
   
