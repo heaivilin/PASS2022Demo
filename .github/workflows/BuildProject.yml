@@ -24,9 +24,6 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
-      
-    - name: Add SQLPackage.exe
-      uses: coreywebber/setup-sqlpackage@v1
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
