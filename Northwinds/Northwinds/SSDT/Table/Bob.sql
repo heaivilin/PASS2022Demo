@@ -1,0 +1,4 @@
+﻿CREATE TABLE [SSDT].[Bob]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
