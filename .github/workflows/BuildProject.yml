@@ -3,12 +3,13 @@ name: MSBuild
 on:
   push:
     branches: [ "main" ]
+  
+  #### used if you want to deploy on a PR being merged into a branch.
   #pull_request:
   #  types:
   #    - closed
   #  branches: [ "main" ]
       
-
 env:
   # Path to the solution file relative to the root of the project.
   SOLUTION_FILE_PATH: .\Northwinds\Northwinds
@@ -20,25 +21,24 @@ env:
 
 jobs:
   build:
+    ### Yeah, why not
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
 
+    ### https://github.com/marketplace/actions/setup-msbuild
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
 
-    #- name: Restore NuGet packages
-    #  working-directory: ${{env.GITHUB_WORKSPACE}}
-    #  run: nuget restore ${{env.SOLUTION_FILE_PATH}}\
-
-    - name: Build
+    - name: Build DACPAC for deployment
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
-    - name: get sqlpackage version
+    ## More info here:  https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-pipelines?view=sql-server-ver16
+    - name: Depoy the fleet (aka deploy SQL updates)
       working-directory: C:\Program Files\Microsoft SQL Server\160\DAC\bin
       run: ./sqlpackage.exe /action:Publish /profile:"D:\a\PASS2022Demo\PASS2022Demo\Northwinds\Northwinds\PublishProfiles\dev.publish.xml" /sourcefile:"D:\a\PASS2022Demo\PASS2022Demo\Northwinds\Northwinds\bin\debug\Northwinds.dacpac"
   
