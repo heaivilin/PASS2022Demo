@@ -34,12 +34,12 @@ jobs:
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+
+    - name: variables
+      run: echo ${{env.GITHUB_WORKSPACE}} ${{env.SOLUTION_FILE_PATH}}
       
-    #- name: deploy
-    #  working-directory: ${{env.GITHUB_WORKSPACE}}
-    #  run: sqlpackage /sourcefile:"${{env.SOLUTION_FILE_PATH}}\bin\debug\Northwinds.dacpac" /action:Publish /profile:"${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml"
     
     - name: get sqlpackage version
-      working-directory: C:\Program Files\Microsoft SQL Server\160\DAC\bin\
-      run: ./sqlpackage.exe /action:Publish /profile:"${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml" /sourcefile:"${{env.SOLUTION_FILE_PATH}}\bin\debug\Northwinds.dacpac"
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: C:\Program Files\Microsoft SQL Server\160\DAC\bin\sqlpackage.exe /action:Publish /profile:"${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml" /sourcefile:"${{env.SOLUTION_FILE_PATH}}\bin\debug\Northwinds.dacpac"
   
