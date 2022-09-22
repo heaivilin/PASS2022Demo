@@ -129,8 +129,6 @@
     <Folder Include="Security\Schema" />
     <Folder Include="SSDT" />
     <Folder Include="SSDT\Table" />
-    <Folder Include="Security\Users" />
-    <Folder Include="Security\Logins" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\CustomerCustomerDemo.sql">
@@ -279,8 +277,6 @@
     </Build>
     <Build Include="Security\Schema\SSDT.sql" />
     <Build Include="SSDT\Table\Tenagra.sql" />
-    <Build Include="Security\Users\SSDTDeployer.sql" />
-    <Build Include="Security\Logins\SSDTDeployer.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishProfiles\DEV.publish.xml" />
