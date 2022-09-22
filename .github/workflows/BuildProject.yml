@@ -40,6 +40,6 @@ jobs:
       
     
     - name: get sqlpackage version
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: C:\Program Files\Microsoft SQL Server\160\DAC\bin\sqlpackage.exe /action:Publish /profile:"${{env.SOLUTION_FILE_PATH}}\PublishProfiles\dev.publish.xml" /sourcefile:"${{env.SOLUTION_FILE_PATH}}\bin\debug\Northwinds.dacpac"
+      working-directory: C:\Program Files\Microsoft SQL Server\160\DAC\bin
+      run: ./sqlpackage.exe /action:Publish /profile:"D:\a\PASS2022Demo\PASS2022Demo\Northwinds\Northwinds\PublishProfiles\dev.publish.xml" /sourcefile:"$D:\a\PASS2022Demo\PASS2022Demo\Northwinds\Northwinds\bin\debug\Northwinds.dacpac"
   
