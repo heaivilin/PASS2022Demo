@@ -281,5 +281,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishProfiles\DEV.publish.xml" />
+    <None Include="PublishProfiles\LOCALDB.publish.xml" />
   </ItemGroup>
 </Project>
