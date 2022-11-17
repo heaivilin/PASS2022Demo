@@ -128,8 +128,6 @@
     <Folder Include="PublishProfiles" />
     <Folder Include="Security" />
     <Folder Include="Security\Schema" />
-    <Folder Include="SSDT" />
-    <Folder Include="SSDT\Table" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\CustomerCustomerDemo.sql">
@@ -277,10 +275,16 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\Schema\SSDT.sql" />
-    <Build Include="SSDT\Table\PatrickMcHolmes.sql" />
+    <Build Include="dbo\Tables\BobIsAwesome.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishProfiles\DEV.publish.xml" />
     <None Include="PublishProfiles\LOCALDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="Version">
+      <DefaultValue>0.0.0.0</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
 </Project>

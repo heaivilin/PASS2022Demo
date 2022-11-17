@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseName>SSDT</TargetDatabaseName>
-    <DeployScriptFileName>Northwinds.sql</DeployScriptFileName>
+    <DeployScriptFileName>ssdt.sql</DeployScriptFileName>
     <TargetConnectionString>Data Source=ssdtdemo.database.windows.net;Persist Security Info=True;User ID=SSDTDeployer;Password=TheCowWentToTheMoonAndBack@1237pmCST!!!!!;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False</TargetConnectionString>
     <BlockOnPossibleDataLoss>False</BlockOnPossibleDataLoss>
     <DatabaseEdition>Basic</DatabaseEdition>
@@ -18,4 +18,9 @@
     <DoNotDropLogins>True</DoNotDropLogins>
     <DoNotDropRoleMembership>True</DoNotDropRoleMembership>
   </PropertyGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="Version">
+      <Value>5</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
 </Project>
